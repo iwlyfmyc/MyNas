@@ -24,18 +24,34 @@
     font-weight: bold;
   }
 
+  @media screen and (min-width: 768px) {
+    .plaque {
+      top: 80px; /* 电脑访问时铭牌距离上方 */
+      left: 80px; /* 电脑访问时铭牌距离左边 */
+      padding: 40px 80px; /* 电脑访问时铭牌内边距 */
+      font-size: 72px; /* 电脑访问时铭牌字体大小 */
+      border-radius: 60px; /* 电脑访问时铭牌圆角 */
+    }
+  }
+
   .big-button {
     display: flex;
     align-items: center;
     background-color: #fff;
     color: #000;
     padding: 20px;
-    margin: 200px auto 0;
+    margin: 100px auto 0; /* 手机访问时大按钮距离上方 */
     width: 80%;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     text-decoration: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    .big-button {
+      margin-top: 200px; /* 电脑访问时大按钮距离上方 */
+    }
   }
 
   .storage-icon {
