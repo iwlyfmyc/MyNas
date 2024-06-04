@@ -55,27 +55,25 @@
   }
 
   .storage-icon {
+    position: relative; /* 添加相对定位 */
     width: 66px;
     height: 66px;
     margin-right: 20px;
   }
 
-  .button-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 20px;
+  .storage-icon::after {
+    content: ''; /* 伪元素内容为空 */
+    position: absolute; /* 绝对定位 */
+    bottom: -5px; /* 相对于图标的位置 */
+    right: -5px;
+    width: 12px; /* 圆点的大小 */
+    height: 12px;
+    background-color: green; /* 圆点的颜色 */
+    border-radius: 50%; /* 圆形 */
+    border: 2px solid #fff; /* 圆点边框 */
   }
 
-  .button-text .title {
-    font-size: 24px;
-    font-weight: normal;
-    margin-bottom: 10px;
-  }
-
-  .button-text .ip-address {
-    font-size: 18px;
-  }
+  /* 其他样式保持不变 */
 </style>
 </head>
 <body>
