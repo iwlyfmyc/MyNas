@@ -64,13 +64,14 @@
   .storage-icon::after {
     content: ''; /* 伪元素内容为空 */
     position: absolute; /* 绝对定位 */
-    bottom: -5px; /* 相对于图标的位置 */
-    right: -5px;
+    top: -5px; /* 相对于图标的位置，现在设置为上方 */
+    right: 20px; /* 调整圆点的水平位置 */
     width: 12px; /* 圆点的大小 */
     height: 12px;
     background-color: green; /* 圆点的颜色 */
     border-radius: 50%; /* 圆形 */
     border: 2px solid #fff; /* 圆点边框 */
+    z-index: 1; /* 确保圆点在图标之上 */
   }
 
   /* 其他样式保持不变 */
