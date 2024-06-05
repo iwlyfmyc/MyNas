@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>MyNas</title>
 <style>
   body {
@@ -26,11 +26,11 @@
 
   @media screen and (min-width: 768px) {
     .plaque {
-      top: 40px; /* 电脑访问时铭牌距离上方 */
-      left: 40px; /* 电脑访问时铭牌距离左边 */
-      padding: 20px 40px; /* 电脑访问时铭牌内边距 */
-      font-size: 36px; /* 电脑访问时铭牌字体大小 */
-      border-radius: 30px; /* 电脑访问时铭牌圆角 */
+      top: 40px;
+      left: 40px;
+      padding: 20px 40px;
+      font-size: 36px;
+      border-radius: 30px;
     }
   }
 
@@ -40,25 +40,105 @@
     background-color: #fff;
     color: #000;
     padding: 20px;
-    margin: 100px auto 0; /* 手机访问时大按钮距离上方 */
-    width: 84%;
+    margin: 100px auto 0;
+    width: 86%; /* 电脑访问时宽度为86% */
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     text-decoration: none;
   }
 
+  @media screen and (max-width: 767px) {
+    .big-button {
+      width: 80%; /* 手机访问时宽度为80% */
+    }
+  }
+
   @media screen and (min-width: 768px) {
     .big-button {
-      margin-top: 200px; /* 电脑访问时大按钮距离上方 */
+      margin-top: 200px;
     }
   }
 
   .storage-icon {
-    position: relative; /* 添加相对定位 */
     width: 66px;
     height: 66px;
     margin-right: 20px;
+  }
+
+  /* New button styling */
+  .small-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    margin-top: 50px; /* 距离大按钮50px */
+    margin-left: calc(7% + 5px); /* 相对于大按钮向右偏移7% + 5px */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    position: relative; /* 添加相对定位 */
+  }
+
+  .small-button img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .second-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    position: absolute;
+    left: calc(7% + 255px); /* 相对于小按钮向右偏移50px */
+    margin-top: -200px; /* 大按钮下方50px */
+  }
+
+  .second-button img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+@media screen and (max-width: 767px) {
+  .small-button {
+    width: 135px;
+    height: 135px;
+    margin-top: 30px;
+    left:5px; /* 让小按钮水平居中 */
+  }
+  .second-button {
+    width: 135px;
+    height: 135px;
+    left: 192px; /* 让二按钮水平居中 */
+    margin-top: -135px; 
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .small-button img {
+      width: 80px; /* 调整图标大小为80px */
+      height: 80px;
+    }
+    .second-button img {
+      width: 80px; /* 调整图标大小为80px */
+      height: 80px;
+    }
   }
 </style>
 </head>
@@ -66,12 +146,20 @@
 
 <div class="plaque">MyNas</div>
 
-<a href="https://iwlyfmyc.ddnsto.com:443" class="big-button">
+<a href="https://192.168.1.17" class="big-button">
   <img src="1-icon.png" alt="MyNas Icon" class="storage-icon" />
   <div class="button-text">
     <div class="title">MyNas</div>
     <div class="ip-address">IP:192.168.1.17</div>
   </div>
+</a>
+
+<a href="http://192.168.1.17/"" class="small-button">
+  <img src="2-icon.png" alt="Small Button Icon" class="storage-icon" />
+</a>
+
+<a href="https://file.ddnsto.com:9443/?auth=eyJ1RW4iOiJJTjU1WmNBc1U2RUJfdDktZzlna2lkd3RzTXdPIiwicEVuIjoiOUx2bjQwVmV4Q1Z2SVoxT0lsbDVxMm04QkxXZDJtNVEiLCJyb290SWQiOiJjYmViNzQ5ZTFjZmI0NzE0YWIyYjk3OTI4MTI2MzExZiIsInJvdXRlcklkIjoiMDAxMTMyOTNiNDA0In0%3D#/"" class="second-button">
+  <img src="3-icon.png" alt="Second Button Icon" class="storage-icon" />
 </a>
 
 </body>
